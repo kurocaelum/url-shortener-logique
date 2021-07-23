@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_link")
@@ -22,6 +23,7 @@ public class Link implements Serializable {
 	private Long id;
 	
 	@Column(name = "original_url", nullable = false)
+	@NotNull
 	private String originalUrl;
 	
 	@Column(name = "short_url", nullable = false)

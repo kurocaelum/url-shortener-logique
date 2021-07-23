@@ -51,10 +51,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsServiceBean())
 		.passwordEncoder(passwordEncoder());
-		
-//		auth.inMemoryAuthentication()
-//		.withUser("david").password(passwordEncoder().encode("david2020")).authorities("USER")
-//		.and()
-//		.withUser("user").password(passwordEncoder().encode("password")).authorities("USER");
 	}
 }

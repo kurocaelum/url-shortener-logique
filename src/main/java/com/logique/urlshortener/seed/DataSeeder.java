@@ -21,6 +21,9 @@ public class DataSeeder implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		User user = new User("user", passwordEncoder.encode("password"));
 		userRepository.save(user);
+		
+		user = new User("gilso", passwordEncoder.encode("123456"));
+		userRepository.save(user);
 	}
 
 }

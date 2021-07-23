@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>ShortLinks | Logique</title>
+<style>
+	table, th, td {
+	  border: 1px solid black;
+	}
+</style>
 </head>
 <body>
-	<h1>Meus links encurtados</h1>
+	<h1>Bem vindo <span th:text="${user.username}"></span></h1>
+	
+	<a th:href="@{/logout}">Logout</a><br><br>
+	<a th:href="@{/send-link}">Encurtar novo link</a><br><br>
+	
+	<h3>Links encurtados</h3>
+	<table style="width:50%">
+		<tr>
+			<th>Original</th>
+			<th>Encurtado</th>
+		</tr>
+		<tr th:each="link: ${user.links}">
+			<td th:text="${link.originalUrl}"></td>
+			<td th:text="${link.shortUrl}"></td>
+		</tr>
+	</table>
 </body>
 </html>
