@@ -22,8 +22,8 @@
 			<th>Encurtado</th>
 		</tr>
 		<tr th:each="link: ${user.links}">
-			<td th:text="${link.originalUrl}"></td>
-			<td th:text="${link.shortUrl}"></td>
+			<td> <a th:href="${link.originalUrl}"><span th:text="${link.originalUrl}"></span></a> </td>
+			<td> <a th:href="${link.originalUrl}"><span th:text="${link.shortUrl}"></span></a> </td>
 		</tr>
 	</table>
 </body>
